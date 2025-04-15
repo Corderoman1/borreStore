@@ -1,0 +1,62 @@
+// Variables
+
+$color-principal: rgb(120,120,120);
+$color-secundario: aqua;
+$border: 2px solid $color-secundario;
+$borderHover: 2px solid $color-principal;
+$shadow:1px 1px 40px $color-principal;
+
+
+
+// mixings
+@mixin fontsize($min, $ref, $max){
+    font-size: clamp($min,$ref,$max);
+}
+
+@mixin flex ($direction, $gap, $wrap){
+    display: flex;
+    flex-direction: $direction;
+    gap: $gap;
+    flex-wrap: $wrap;
+    align-items: center;
+}
+
+@mixin grid($min, $rowGap, $colGap){
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax($min,1fr));
+    row-gap: $rowGap;
+    column-gap: $colGap;
+}
+
+@mixin hover(){
+    @media(hover:hover){
+        @content;
+
+    }
+}
+
+@mixin media($media){
+    @media(max-width:$media){
+        @content;
+    }
+}
+
+@mixin lightShadow($color){
+    text-shadow: 1px 1px 40px $color;
+    
+}
+
+@mixin span(){
+    text-shadow: $shadow;
+    span{
+        color: aqua;
+        font-family: Electrolize;
+        @include fontsize(40px,4.1vw,5.1vw);
+        text-transform: uppercase;
+    }
+}
+
+
+
+
+

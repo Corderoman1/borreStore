@@ -1,0 +1,57 @@
+%body{
+    background: #000000;
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 195, 255) 100%, rgb(255, 255, 255) 100%);
+}
+
+
+.container{
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+.btn-normal{
+    display: block;
+    max-width: 200px;
+    width: 80%;
+    height: 40px;
+    color: $color-principal;
+    text-decoration: none;
+    text-align: center;
+    padding: calc(40px/8) 0 0 0;
+    border-radius: 10px;
+    background-color: black;
+    border: $border;
+    transition: .2s;
+    cursor: pointer;
+    @include hover{
+        &:hover{
+            background-color: aqua;
+            box-shadow: $shadow;
+        }
+    }
+
+}
+a{
+    color: $color-principal;
+    text-shadow: $shadow;
+    transition: .5s;
+    &:hover{
+        color: white;
+        text-shadow: 1px 1px 10px white;
+    }
+}
+
+
+.nav{
+    @include flex (row, 0, no   wrap);
+    justify-content: space-between;
+}
+
+.nav__ol{
+    @include flex (row, 40px, nowrap);
+    
+}
+

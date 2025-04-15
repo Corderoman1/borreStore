@@ -1,0 +1,26 @@
+@include media(65rem){
+    .aboutUs__contentTesti{
+        height: 80vh;
+        @include flex (column, 40px, nowrap);
+        justify-content: center;
+
+        .aboutUs__coments{
+            @include flex (row, 0, wrap);
+            margin: 0;
+            .aboutUs__coment::before{
+                content: "''";
+                font-size: 40px;
+                
+
+            }
+        }
+        
+    }
+}
+
+@include media(36rem){
+    .nav{
+        @include flex (column, 0, no   wrap);
+        justify-content: space-between;
+    }
+}

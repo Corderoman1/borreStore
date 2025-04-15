@@ -1,0 +1,143 @@
+body{
+    @extend %body;
+}
+
+
+.header{
+    background-image: url(../img/banner-1.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 80vh;
+}
+
+.logo{
+    @include span();
+}
+
+.header__flex{
+    height: 80%;
+    @include flex (column, 40px, nowrap);
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.header__title{
+    @include span();
+}
+.header__slo{
+    @include fontsize(18px,2.5vw,3vw);
+    text-shadow: $shadow;
+    
+}
+.main{
+    margin-top:100px;
+}
+.store__grid{
+    @include grid (300px, 20px,20px);   
+}
+.store__cart{
+    border: $border;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: $shadow;
+    color: $color-principal;
+}
+.store__productImg{
+    width: 100%;
+}
+.store__cartContent{
+    @include flex (column, 10px, nowrap); 
+    padding: 20px;
+}
+.store__cartTitle{
+    font-size: clamp(1.5rem,1.5vw,2.5vw);
+    text-shadow: $shadow;
+}
+.store__cartPrice{
+    font-size: clamp(1.5rem,1.5vw,2.5vw);
+}
+.store__cartPrice::first-letter{
+    color: white;
+}
+
+
+.aboutUs__contentTesti{
+    height: 60vh;
+    @include flex (row, 20px, nowrap);
+    color: white; 
+}
+.aboutUs__picComent{
+    max-width: 300px;
+    width: 90%;
+    margin: 40px 0;
+    @include flex (row,0, nowrap);
+    .aboutUs__pic{
+        width: 25%;
+        border-radius: 50%;
+
+        
+    }
+}
+.aboutUs__picComent:nth-child(2){
+    margin-left: 50px;
+}
+
+.aboutUs__picComent:nth-child(3){
+    margin-left: 100px;
+}
+.contactUS__form{
+    box-shadow: $shadow;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 95%;
+    margin: 0 auto;
+    textarea{
+        display: block;
+        height: 100px;
+        padding: 10px 10px;
+    }
+}
+
+.form__label{
+    display: block;
+    color: white;
+    margin-top: 10px;
+}
+.contactUS__input{
+    width: 95%;
+    border-radius: 10px;
+    height: 30px;
+    padding-left: 10px;
+    &[type="submit"]{
+        margin: 40px auto 20px;
+        color: $color-principal;
+        height: 40px;
+
+    }
+
+
+}
+
+.footer{
+    color: $color-principal;
+    margin-top: 40px;
+    border-top: 2px solid $color-principal;
+    padding: 40px 0;
+    .footer__flex{
+        @include flex (row, 0, nowrap);
+        justify-content: space-between;
+        align-content: center;
+        
+    }
+    .footer__redes{
+        a{
+            margin: 0 20px 0 20px;
+        }
+    }
+
+}
+
+
+
