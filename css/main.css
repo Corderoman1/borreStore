@@ -42,23 +42,6 @@ a:hover {
   text-shadow: 1px 1px 10px white;
 }
 
-.nav {
-  display: flex;
-  flex-direction: row;
-  gap: 0;
-  flex-wrap: no wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav__ol {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
 .header {
   background-image: url(../img/banner-1.jpg);
   background-size: cover;
@@ -265,7 +248,7 @@ a:hover {
   right: -600px;
   opacity: 0;
   transition: 0.9s all ease;
-  overflow-y: scroll;
+  overflow: auto;
 }
 .shoppingCar__closeButtom {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -306,6 +289,7 @@ a:hover {
   justify-content: space-between;
   margin-bottom: 40px;
   border-bottom: 2px dotted #999;
+  transition: all 0.5s ease;
 }
 .shoppingCar__productImg {
   width: 60px;

@@ -165,7 +165,8 @@ body{
     right: -600px;
     opacity: 0;
     transition: .9s all ease;
-    overflow-y: scroll;
+    overflow: auto;
+    
     &__closeButtom{
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         width: 30px;
@@ -202,6 +203,7 @@ body{
         justify-content: space-between;
         margin-bottom: 40px;
         border-bottom: 2px dotted #999;
+        transition: all .5s ease;
         
     }
     &__productImg{

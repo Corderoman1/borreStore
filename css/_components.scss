@@ -45,13 +45,5 @@ a{
 }
 
 
-.nav{
-    @include flex (row, 0, no   wrap);
-    justify-content: space-between;
-}
 
-.nav__ol{
-    @include flex (row, 40px, nowrap);
-    
-}
 

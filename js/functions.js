@@ -1,32 +1,57 @@
-const shoppingCart = document.querySelector(".shoppingCar");
-const misCompras = document.getElementById("misCompras");
-const shoppingCarCloseButtom = document.getElementById("closeButtom")
-const shoppingCartDeleteIcon = document.querySelectorAll('.shoppingCar__iconDelete')
-const addToCarButtom = document.querySelectorAll(".store__cartButton")
-const shoppingCounter = document.querySelector(".nav__shoppingCounter")
-console.log(shoppingCartDeleteIcon)
-misCompras.addEventListener("click",(e)=>(
-    shoppingCart.classList.add("shoppingCar--show"))
-)
-
-shoppingCarCloseButtom.addEventListener("click",(e)=>(
-    shoppingCart.classList.remove("shoppingCar--show"))
-)
+document.addEventListener("DOMContentLoaded",main());
 
 
-shoppingCartDeleteIcon.forEach(element => {
-    element.addEventListener("click",(e)=>{
-        const parentElemt = element.parentElement;
-        console.log(parentElemt)
-        parentElemt.remove();
-    }
 
+function main(){
+    const shoppingCart = document.querySelector(".shoppingCar");
+    const misCompras = document.getElementById("misCompras");
+    const shoppingCarCloseButtom = document.getElementById("closeButtom")
+    const shoppingCartDeleteIcon = document.querySelectorAll('.shoppingCar__iconDelete')
+    const addToCarButtom = document.querySelectorAll(".store__cartButton")
+    const shoppingCounter = document.querySelector(".nav__shoppingCounter")
+    console.log(shoppingCartDeleteIcon)
+    misCompras.addEventListener("click",(e)=>(
+        shoppingCart.classList.add("shoppingCar--show"))
     )
     
-})
-
-addToCarButtom.forEach(element=>{
-    element.addEventListener("click",()=>{
+    shoppingCarCloseButtom.addEventListener("click",(e)=>(
+        shoppingCart.classList.remove("shoppingCar--show"))
+    )
+    
+    
+    shoppingCartDeleteIcon.forEach(element => {
+        element.addEventListener("click",(e)=>{
+            const parentElemt = element.parentElement;
+            console.log(parentElemt)
+            parentElemt.remove();
+        }
+    
+        )
+        
+    })
+    
+    addToCarButtom.forEach(element=>{
+        element.addEventListener("click",()=>{
+            generateShoppingCarProduct(element);
+                
+    
+            
+    
+        })
+        
+    })
+    function chekShoppingCar(){
+        const counter = document.querySelectorAll(".shoppingCar__product")
+        if(counter.length == 0){
+            shoppingCounter.classList.remove("nav__shoppingCounter--show")
+            
+        }else{
+            shoppingCounter.classList.add("nav__shoppingCounter--show")
+            shoppingCounter.innerText=counter.length
+        }
+    }
+    
+    function generateShoppingCarProduct(element){
         const granpaElement = element.parentElement.parentElement;
         const titleOri = granpaElement.querySelector(".store__cartTitle");
         const priceOri = granpaElement.querySelector(".store__cartPrice");
@@ -46,38 +71,19 @@ addToCarButtom.forEach(element=>{
         img.classList.add("shoppingCar__productImg")
         img.setAttribute('src',imgOri.getAttribute("src"))
         
-
-        const shoppingCarItem = document.createElement("div");
-        shoppingCarItem.classList.add("shoppingCar__product")
-        shoppingCarItem.appendChild(img)
-        shoppingCarItem.appendChild(title)
-        shoppingCarItem.appendChild(price)
-        shoppingCarItem.appendChild(shoppingCartDeleteIcon)
-        shoppingCart.appendChild(shoppingCarItem)
-        chekShoppingCar()
-        shoppingCartDeleteIcon.addEventListener("click",()=>{
-            parentElement = shoppingCartDeleteIcon.parentElement
-            parentElement.remove()
+            const shoppingCarItem = document.createElement("div");
+            shoppingCarItem.classList.add("shoppingCar__product")
+            shoppingCarItem.appendChild(img)
+            shoppingCarItem.appendChild(title)
+            shoppingCarItem.appendChild(price)
+            shoppingCarItem.appendChild(shoppingCartDeleteIcon)
+            shoppingCart.appendChild(shoppingCarItem)
             chekShoppingCar()
-        })
-        
-
-    })
-    
-})
-
-function chekShoppingCar(){
-    const counter = document.querySelectorAll(".shoppingCar__product")
-    if(counter.length == 0){
-        shoppingCounter.classList.remove("nav__shoppingCounter--show")
-        
-    }else{
-        shoppingCounter.classList.add("nav__shoppingCounter--show")
-        shoppingCounter.innerText=counter.length
+            shoppingCartDeleteIcon.addEventListener("click",()=>{
+                parentElement = shoppingCartDeleteIcon.parentElement
+                parentElement.remove()
+                chekShoppingCar()
+            })
     }
+    chekShoppingCar()
 }
-
-function generateShoppingCarProduct(element){
-    
-}
-chekShoppingCar()
