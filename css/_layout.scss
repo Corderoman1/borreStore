@@ -33,6 +33,39 @@ body{
 .main{
     margin-top:100px;
 }
+.nav{
+    @include flex (row, 0, no   wrap);
+    justify-content: space-between;
+    &__ol{
+        @include flex (row, 40px, nowrap);
+    }
+    &__li{
+        display: block;
+        &:nth-child(4){
+            position: relative;
+        }
+    }
+    &__shoppingCounter{
+        display: none;
+        position: absolute;
+        background-color: red;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        opacity: .9;
+        color: white;
+        border-radius: 50%;
+        padding-top: 2px;
+        box-sizing: border-box;
+        top:-15px;
+        right: -20px;
+        &--show{
+            display: block;
+        }
+    }
+}
+
+
 .store__grid{
     @include grid (300px, 20px,20px);   
 }
@@ -117,6 +150,67 @@ body{
 
     }
 
+
+}
+
+.shoppingCar{
+    max-width: 400px;
+    width: 90%;
+    height: 600px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    top: 80px;
+    right: -600px;
+    opacity: 0;
+    transition: .9s all ease;
+    overflow-y: scroll;
+    &__closeButtom{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        width: 30px;
+        height: 30px;
+        background-color: #999;
+        text-align: center;
+        padding-top: 8px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 0 0 auto;
+        opacity: .9;
+        color: white;
+        transition: all .2s ease;
+        @include hover{
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+    &--show{
+        right: 0;
+        opacity: 1;
+        
+    }
+    &__title{
+        font-weight: 70px;
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+    &__product{
+        @include flex (row, 0, nowrap);
+        justify-content: space-between;
+        margin-bottom: 40px;
+        border-bottom: 2px dotted #999;
+        
+    }
+    &__productImg{
+        width: 60px;
+    }
+    &__iconDelete{
+        width: 20px;
+        cursor: pointer;
+    }
 
 }
 

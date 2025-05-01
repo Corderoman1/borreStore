@@ -106,6 +106,46 @@ a:hover {
   margin-top: 100px;
 }
 
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  flex-wrap: no wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__ol {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.nav__li {
+  display: block;
+}
+.nav__li:nth-child(4) {
+  position: relative;
+}
+.nav__shoppingCounter {
+  display: none;
+  position: absolute;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  opacity: 0.9;
+  color: white;
+  border-radius: 50%;
+  padding-top: 2px;
+  box-sizing: border-box;
+  top: -15px;
+  right: -20px;
+}
+.nav__shoppingCounter--show {
+  display: block;
+}
+
 .store__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -211,6 +251,68 @@ a:hover {
   margin: 40px auto 20px;
   color: rgb(120, 120, 120);
   height: 40px;
+}
+
+.shoppingCar {
+  max-width: 400px;
+  width: 90%;
+  height: 600px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  position: fixed;
+  top: 80px;
+  right: -600px;
+  opacity: 0;
+  transition: 0.9s all ease;
+  overflow-y: scroll;
+}
+.shoppingCar__closeButtom {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  width: 30px;
+  height: 30px;
+  background-color: #999;
+  text-align: center;
+  padding-top: 8px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 0 0 auto;
+  opacity: 0.9;
+  color: white;
+  transition: all 0.2s ease;
+}
+@media (hover: hover) {
+  .shoppingCar__closeButtom:hover {
+    opacity: 1;
+  }
+}
+.shoppingCar--show {
+  right: 0;
+  opacity: 1;
+}
+.shoppingCar__title {
+  font-weight: 70px;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+.shoppingCar__product {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border-bottom: 2px dotted #999;
+}
+.shoppingCar__productImg {
+  width: 60px;
+}
+.shoppingCar__iconDelete {
+  width: 20px;
+  cursor: pointer;
 }
 
 .footer {
